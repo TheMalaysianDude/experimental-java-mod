@@ -1,14 +1,13 @@
 package experimental;
 
 import arc.*;
+import arc.func.*;
 import arc.util.*;
-import mindustry.*;
-import mindustry.content.*;
+import mindustry.ctype.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
-import mindustry.ui.dialogs.*;
-import experimental.content.*;
+import mindustry.mod.Mods.*;
 
 public class ExperimentalJavaMod extends Mod{
 	
