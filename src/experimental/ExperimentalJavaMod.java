@@ -8,6 +8,7 @@ import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.mod.Mods.*;
+import experimental.content.*;
 
 public class ExperimentalJavaMod extends Mod{
 	
