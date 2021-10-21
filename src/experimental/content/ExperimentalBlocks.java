@@ -19,6 +19,8 @@ import mindustry.world.meta.*;
 import af.world.draw.*;
 import af.world.blocks.power.*;
 
+import static mindustry.type.ItemStack.*;
+
 public class ExperimentalBlocks implements ContentList{
 	public static Block
 	
