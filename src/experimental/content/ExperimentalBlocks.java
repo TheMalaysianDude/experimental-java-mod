@@ -24,14 +24,14 @@ public class ExperimentalBlocks implements ContentList{
 	public static Block
 	
 	//experimental
-	testBlock;
+	testBlock, testDrill;
 	
 	@Override
 	public void load(){
 		
 		//experimental
 		testBlock = new ConfigBlock("test-block"){{
-			requirements(Category.crafting, with(
+			requirements(Category.effect, with(
 				Items.copper, 1,
 				Items.lead, 1
 			));
@@ -39,5 +39,16 @@ public class ExperimentalBlocks implements ContentList{
 			size = 1;
 		}};
 		
+		testDrill = new PayloadDrill("test-drill"){{
+			requirements(Category.drill, with(
+				Items.copper, 1,
+				Items.lead, 1
+			));
+			
+			size = 5;
+			
+			drillTime = 5000f;
+			drawRim = false;
+		}}
 	}
 }
