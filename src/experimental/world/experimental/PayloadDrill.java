@@ -94,7 +94,7 @@ public class PayloadDrill extends Drill{
 
             if(dominantItems > 0 && progress >= delay && recipe() != null && payload == null){
                 consume();
-				payload = new (T)BuildPayload(recipe(), team);
+				payload = (T)(new BuildPayload(recipe(), team))
 				
 				if(payload.build.acceptItem(payload.build, dominantItem)){
 					payload.build.items.add(dominantItem, block.payload.itemCapacity);
