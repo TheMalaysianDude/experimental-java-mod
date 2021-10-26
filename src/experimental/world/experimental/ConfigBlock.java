@@ -15,7 +15,7 @@ public class ConfigBlock extends Block{
 		configurable = true;
 		update = true;
 		drawDisabled = false;
-		autoResetEnable = false;
+		autoResetEnabled = false;
 		group = BlockGroup.logic;
 		
 		config(Boolean.class, (ConfigBuild entity, Boolean b) -> {
