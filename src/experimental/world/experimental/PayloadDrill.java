@@ -1,10 +1,13 @@
 package experimental.world.experimental;
 
+import arc.*;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
-import arc.scene.ui.layout.*;
+import arc.math.*;
+import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
+import arc.scene.ui.layout.*;;
 import mindustry.*;
 import mindustry.ui.*;
 import mindustry.gen.*;
@@ -38,11 +41,11 @@ public class PayloadDrill extends Drill{
 		return b instanceof StorageBlock && b.isVisible() && b.size >= minBlockSize && b.size <= maxBlockSize;
 	}
 	
-	public class PayloadDrillBuild extends Drill.DrillBuild{
+	public class PayloadDrillBuild<T extends Payload>  extends Drill.DrillBuild{
 		public @Nullable T payload;
 		public @Nullable Block recipe;
 		
-		@Override
+		
 		public @Nullable Block recipe(){
 			return recipe;
 		}
