@@ -40,7 +40,7 @@ public class ExperimentalBlocks implements ContentList{
 		}};
 		
 		testDrill = new PayloadDrill("test-drill"){{
-			requirements(Category.drill, with(
+			requirements(Category.production, with(
 				Items.copper, 1,
 				Items.lead, 1
 			));
