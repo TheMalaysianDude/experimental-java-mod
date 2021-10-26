@@ -41,7 +41,7 @@ public class PayloadDrill extends Drill{
 		return b instanceof StorageBlock && b.isVisible() && b.size >= minBlockSize && b.size <= maxBlockSize;
 	}
 	
-	public class PayloadDrillBuild<T extends Payload>  extends Drill.DrillBuild{
+	public class PayloadDrillBuild<T extends BuildPayload>  extends Drill.DrillBuild{
 		public @Nullable T payload;
 		public @Nullable Block recipe;
 		
