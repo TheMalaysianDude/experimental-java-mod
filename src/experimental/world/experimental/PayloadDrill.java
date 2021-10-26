@@ -74,7 +74,10 @@ public class PayloadDrill extends Drill{
 			if(dominantItem == null){
                 return;
             }
-			if(payload != null) dumpPayload(payload);
+			if(payload != null){
+				dumpPayload(payload);
+				payload = null;
+			}
 			
 			timeDrilled += warmup * delta();
 			
