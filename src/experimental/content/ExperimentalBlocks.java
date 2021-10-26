@@ -49,6 +49,6 @@ public class ExperimentalBlocks implements ContentList{
 			
 			drillTime = 5000f;
 			drawRim = false;
-		}}
+		}};
 	}
 }
