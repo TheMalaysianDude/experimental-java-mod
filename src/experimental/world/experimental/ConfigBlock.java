@@ -1,5 +1,6 @@
 package experimental.world.experimental;
 
+import arc.*;
 import arc.graphics.g2d.*;
 import arc.util.io.*;
 import mindustry.gen.*;
