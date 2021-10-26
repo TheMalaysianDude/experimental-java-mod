@@ -24,7 +24,7 @@ public class ConfigBlock extends Block{
 	
 	@Override
 	public void load(){
-		super,load();
+		super.load();
 		onRegion = Core.atlas.find(name + "-on");
 	}
 	
