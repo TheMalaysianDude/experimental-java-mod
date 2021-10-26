@@ -26,7 +26,7 @@ public class PayloadDrill extends Drill{
 		
 		config(Block.class, (PayloadDrillBuild tile, Block block) -> {
 			if(tile.recipe != block) tile.progress = 0f;
-			if(canProduce(block){
+			if(canProduce(block)){
 				tile.recipe = block;
 			}
 		});
@@ -43,7 +43,7 @@ public class PayloadDrill extends Drill{
 		
 		@Override
 		public @Nullable Block recipe(){
-			return recipe
+			return recipe;
 		}
 		
         @Override
