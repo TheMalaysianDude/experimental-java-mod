@@ -36,7 +36,6 @@ public class PayloadDrill extends Drill{
 		});
 	}
 	
-	@Override
 	public boolean canProduce(Block b){
 		return b instanceof StorageBlock && b.isVisible() && b.size >= minBlockSize && b.size <= maxBlockSize;
 	}
@@ -97,7 +96,7 @@ public class PayloadDrill extends Drill{
 				payload = (T)(new BuildPayload(recipe(), team));
 				
 				if(payload.build.acceptItem(payload.build, dominantItem)){
-					payload.build.items.add(dominantItem, block.payload.itemCapacity);
+					payload.build.items.add(dominantItem, recipe().itemCapacity);
 				}
 				
 				dumpPayload(payload);
