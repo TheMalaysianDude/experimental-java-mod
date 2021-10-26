@@ -16,6 +16,7 @@ import mindustry.world.blocks.production.*;
 import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
+import experimental.world.experimental.*;
 
 import static mindustry.type.ItemStack.*;
 
@@ -29,21 +30,13 @@ public class ExperimentalBlocks implements ContentList{
 	public void load(){
 		
 		//experimental
-		testBlock = new GenericCrafter("test-block"){{
+		testBlock = new ConfigBlock("test-block"){{
 			requirements(Category.crafting, with(
 				Items.copper, 1,
 				Items.lead, 1
 			));
 			
-			outputItem = new ItemStack(Items.graphite, 3);
-			craftTime  = 27f;
-			size = 3;
-			hasPower = hasItems = hasLiquids = true;
-			itemCapacity = 10;
-			
-			consumes.item(Items.copper, 1);
-			consumes.liquid(Liquids.water, 0.1f);
-			consumes.power(0.5f);
+			size = 1;
 		}};
 		
 	}
