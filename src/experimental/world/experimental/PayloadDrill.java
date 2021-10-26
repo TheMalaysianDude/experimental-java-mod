@@ -22,11 +22,13 @@ import static mindustry.Vars.*;
 
 public class PayloadDrill extends Drill{
 	public int minBlockSize = 1, maxBlockSize = 2;
+	public TextureRegion rotatorsRegion, rotatorsTopRegion;
 	
 	public PayloadDrill(String name){
 		super(name);
 		
 		configurable = true;
+		rotate = true;
 		
 		config(Block.class, (PayloadDrillBuild tile, Block block) -> {
 			if(tile.recipe != block) tile.progress = 0f;
@@ -34,6 +36,14 @@ public class PayloadDrill extends Drill{
 				tile.recipe = block;
 			}
 		});
+	}
+	
+	@Override
+	public void load(){
+		super.load();
+		
+		rotatorsRegion = Core.atlas.find(name + "-rotators");
+		rotatorsTopRegion = Core.atlas.find(name + "-rotators-top");
 	}
 	
 	public boolean canProduce(Block b){
