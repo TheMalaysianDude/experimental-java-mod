@@ -74,6 +74,7 @@ public class PayloadDrill extends Drill{
 			if(dominantItem == null){
                 return;
             }
+			if(payload != null) dumpPayload(payload);
 			
 			timeDrilled += warmup * delta();
 			
@@ -108,8 +109,6 @@ public class PayloadDrill extends Drill{
 				if(payload.build.acceptItem(payload.build, dominantItem)){
 					payload.build.items.add(dominantItem, recipe().itemCapacity);
 				}
-				
-				dumpPayload(payload);
 
                 progress %= delay;
 
