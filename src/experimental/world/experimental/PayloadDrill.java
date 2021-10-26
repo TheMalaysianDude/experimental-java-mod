@@ -7,6 +7,7 @@ import arc.util.*;
 import arc.util.io.*;
 import mindustry.*;
 import mindustry.ui.*;
+import mindustry.gen.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
 import mindustry.world.blocks.*;
