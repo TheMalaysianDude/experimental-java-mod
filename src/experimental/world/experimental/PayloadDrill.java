@@ -66,7 +66,7 @@ public class PayloadDrill extends BlockProducer{
 	public Color heatColor = Color.valueOf("ff5512");
 	public TextureRegion rimRegion, rotatorRegion, topRegion, itemRegion;
 	
-	public PayloadBlock(String name){
+	public PayloadDrill(String name){
         super(name);
 		
         update = true;
