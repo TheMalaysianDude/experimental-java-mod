@@ -3,6 +3,7 @@ package experimental.world.experimental;
 import arc.*;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
+import arc.scene.ui.layout.*;
 import arc.math.*;
 import arc.struct.*;
 import arc.util.*;
@@ -40,10 +41,10 @@ public class PayloadDrill extends BlockProducer{
     public int tier;
     /** Base time to drill one ore, in frames. */
     public float drillTime = 300;
-    /** How many times faster the drill will drillProgress when boosted by liquid. */
+    /** How many times faster the drill will progress when boosted by liquid. */
     public float liquidBoostIntensity = 1.6f;
     /** Speed at which the drill speeds up. */
-    public float warmupSpeed = 0.02f;
+    public float warmupSpeed = 0.015f;
 
     //return variables for countOre
     protected @Nullable Item returnItem;
@@ -53,6 +54,8 @@ public class PayloadDrill extends BlockProducer{
     public boolean drawMineItem = true;
     /** Effect played when an item is produced. This is colored. */
     public Effect drillEffect = Fx.mine;
+    /** Drill effect randomness. Block size by default. */
+    public float drillEffectRnd = -1f;
     /** Speed the drill bit rotates at. */
     public float rotateSpeed = 2f;
     /** Effect randomly played while drilling. */
@@ -252,7 +255,6 @@ public class PayloadDrill extends BlockProducer{
 		
 		public boolean shouldExport(){
             return payload != null && (
-                exporting ||
                 (payload.block().hasItems && payload.block().separateItemCapacity && content.items().contains(i -> payload.build.items.get(i) >= payload.block().itemCapacity)));
         }
 		
@@ -362,7 +364,7 @@ public class PayloadDrill extends BlockProducer{
 
                 if(progress >= recipe.buildCost){
                     consume();
-                    payload = new BuildPayload(recipe, team);
+                    payload = (T)(new BuildPayload(recipe, team));
                     Fx.placeBlock.at(x, y, payload.size() / tilesize);
                     payVector.setZero();
                     progress %= 1f;
