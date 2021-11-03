@@ -87,8 +87,8 @@ public class PayloadDrill extends PayloadBlock {
 
         @Override
         public int getMaximumAccepted(Item item){
-            if(recipe() == null) return 0;
-            for(ItemStack stack : recipe().requirements){
+            if(recipe == null) return 0;
+            for(ItemStack stack : recipe.requirements){
                 if(stack.item == item) return stack.amount * 2;
             }
             return 0;
