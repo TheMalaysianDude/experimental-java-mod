@@ -7,27 +7,26 @@ import arc.math.*;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
-import mindustry.content.*;
-import mindustry.entities.*;
-import mindustry.entities.units.*;
-import mindustry.game.*;
-import mindustry.gen.*;
-import mindustry.graphics.*;
-import mindustry.logic.*;
-import mindustry.type.*;
+import arc.scene.ui.layout.*;
+import mindustry.*;
 import mindustry.ui.*;
+import mindustry.gen.*;
 import mindustry.world.*;
-import mindustry.world.blocks.payloads.*;
-import mindustry.world.blocks.environment.*;
 import mindustry.world.meta.*;
+import mindustry.world.blocks.*;
+import mindustry.world.blocks.payloads.*;
+import mindustry.world.blocks.production.*;
+import mindustry.world.blocks.storage.*;
 
 import static mindustry.Vars.*;
 
 public class PayloadDrill extends PayloadBlock {
+	public int minBlockSize = 1, maxBlockSize = 3;
 	
 	public PayloadDrill(String name){
 		super(name);
 		
+		size = 5;
 		configurable = true;
 		rotate = true;
 		outputsPayload = true;
@@ -46,6 +45,7 @@ public class PayloadDrill extends PayloadBlock {
 	
 	public class PayloadDrillBuild extends PayloadBlock.PayloadBlockBuild{
 		public @Nullable Block recipe;
+		public float progress;
 		
 		
 		public @Nullable Block recipe(){
