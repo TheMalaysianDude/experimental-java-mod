@@ -7,7 +7,7 @@ import arc.math.*;
 import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
-import arc.scene.ui.layout.*;;
+import arc.scene.ui.layout.*;
 import mindustry.*;
 import mindustry.ui.*;
 import mindustry.gen.*;
