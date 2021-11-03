@@ -45,11 +45,11 @@ public class ExperimentalBlocks implements ContentList{
 				Items.lead, 1
 			));
 			
-			maxBlockSize = 3;
+			//maxBlockSize = 3;
 			size = 5;
 			
-			drillTime = 5000f;
-			drawRim = false;
+			//drillTime = 5000f;
+			//drawRim = false;
 		}};
 	}
 }
