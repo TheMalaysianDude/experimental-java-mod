@@ -81,6 +81,20 @@ public class PayloadDrill extends PayloadBlock {
         }
 		
 		@Override
+        public boolean acceptItem(Building source, Item item){
+            return items.get(item) < getMaximumAccepted(item);
+        }
+
+        @Override
+        public int getMaximumAccepted(Item item){
+            if(recipe() == null) return 0;
+            for(ItemStack stack : recipe().requirements){
+                if(stack.item == item) return stack.amount * 2;
+            }
+            return 0;
+        }
+		
+		@Override
         public void updateTile(){
             super.updateTile();
             boolean produce = recipe != null && consValid() && payload == null;
