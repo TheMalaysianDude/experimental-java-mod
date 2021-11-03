@@ -13,6 +13,7 @@ import mindustry.ui.*;
 import mindustry.gen.*;
 import mindustry.world.*;
 import mindustry.world.meta.*;
+import mindustry.world.consumers.*;
 import mindustry.world.blocks.*;
 import mindustry.world.blocks.payloads.*;
 import mindustry.world.blocks.production.*;
@@ -31,7 +32,7 @@ public class PayloadDrill extends PayloadBlock {
 		rotate = true;
 		outputsPayload = true;
 		
-		consumes.add(new ConsumeItemDynamic((PayloadDrillBuild e) -> e.recipe != null ? e.recipe().requirements : ItemStack.empty));
+		consumes.add(new ConsumeItemDynamic((PayloadDrillBuild e) -> e.recipe != null ? e.recipe.requirements : ItemStack.empty));
 		
 		config(Block.class, (PayloadDrillBuild tile, Block block) -> {
 			if(tile.recipe != block) tile.progress = 0f;
