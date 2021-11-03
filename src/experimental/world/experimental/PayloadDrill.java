@@ -33,6 +33,10 @@ public class PayloadDrill extends PayloadBlock {
 		super(name);
 		
 		size = 5;
+        update = true;
+        hasItems = true;
+        hasPower = true;
+		
 		configurable = true;
 		rotate = true;
 		outputsPayload = true;
