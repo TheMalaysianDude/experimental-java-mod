@@ -9,6 +9,10 @@ import arc.util.*;
 import arc.util.io.*;
 import arc.scene.ui.layout.*;
 import mindustry.*;
+import mindustry.content.*;
+import mindustry.entities.units.*;
+import mindustry.graphics.*;
+import mindustry.type.*;
 import mindustry.ui.*;
 import mindustry.gen.*;
 import mindustry.world.*;
@@ -23,6 +27,7 @@ import static mindustry.Vars.*;
 
 public class PayloadDrill extends PayloadBlock {
 	public int minBlockSize = 1, maxBlockSize = 3;
+	public float buildSpeed = 0.4f;
 	
 	public PayloadDrill(String name){
 		super(name);
@@ -48,7 +53,7 @@ public class PayloadDrill extends PayloadBlock {
 	
 	public class PayloadDrillBuild extends PayloadBlock.PayloadBlockBuild{
 		public @Nullable Block recipe;
-		public float progress;
+		public float progress, time, heat;
 		
         @Override
         public void buildConfiguration(Table table){
