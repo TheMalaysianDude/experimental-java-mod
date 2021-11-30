@@ -31,7 +31,7 @@ public class ExperimentalBlocks implements ContentList{
 		
 		switchBlock = new ConfigBlock("switch"){{
 			requirements(Category.effect, with(
-				Items.copper, 1,
+				Items.copper, 1
 			));
 			
 			size = 1;
