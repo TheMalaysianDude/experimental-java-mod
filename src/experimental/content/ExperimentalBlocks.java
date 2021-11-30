@@ -24,32 +24,17 @@ public class ExperimentalBlocks implements ContentList{
 	public static Block
 	
 	//experimental
-	testBlock, testDrill;
+	switchBlock; //, opacity, rgb;
 	
 	@Override
 	public void load(){
 		
-		//experimental
-		testBlock = new ConfigBlock("test-block"){{
+		switchBlock = new ConfigBlock("switch"){{
 			requirements(Category.effect, with(
 				Items.copper, 1,
-				Items.lead, 1
 			));
 			
 			size = 1;
-		}};
-		
-		testDrill = new PayloadDrill("test-drill"){{
-			requirements(Category.production, with(
-				Items.copper, 1,
-				Items.lead, 1
-			));
-			
-			//maxBlockSize = 3;
-			size = 5;
-			
-			//drillTime = 5000f;
-			//drawRim = false;
 		}};
 	}
 }
