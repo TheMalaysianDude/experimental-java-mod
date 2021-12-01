@@ -45,9 +45,9 @@ public class OpacityBlock extends Block {
 		
 		@Override
         public void buildConfiguration(Table table){
-			table.slider(0f, 1f, 0.1f, 0f, value -> {
+			table.slider(0f, 1f, 0.1f, opacity, value -> {
 				configure(value);
-			}).size(40f); 
+			}).width(80f).height(25f); 
         }
 		
 		@Override
