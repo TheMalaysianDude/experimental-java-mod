@@ -23,7 +23,7 @@ public class OpacityBlock extends Block {
         configurable = true;
         saveConfig = true;
 		
-		config(Float.class, (OpacityBuild tile, float value) -> tile.opacity = value);
+		config(Float.class, (OpacityBuild tile, Float value) -> tile.opacity = value);
 	}
 	
 	@Override
