@@ -33,7 +33,7 @@ public class OpacityBlock extends Block {
 	}
 	
 	public class OpacityBuild extends Building{
-		public Float opacity = 0;
+		public Float opacity;
 		
 		@Override
         public void buildConfiguration(Table table){
