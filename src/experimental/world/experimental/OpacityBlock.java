@@ -43,7 +43,7 @@ public class OpacityBlock extends Block {
         }
 		
 		@Override
-        public float config(){
+        public Object config(){
             return opacity;
         }
 		
