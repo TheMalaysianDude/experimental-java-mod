@@ -1,5 +1,6 @@
 package experimental.world.experimental;
 
+import arc.*;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
@@ -22,7 +23,7 @@ public class OpacityBlock extends Block {
         configurable = true;
         saveConfig = true;
 		
-		config(Float.class, (OpacityBuild tile, Float value) -> tile.opacity = value);
+		config(Float.class, (OpacityBuild tile, float value) -> tile.opacity = value);
 	}
 	
 	@Override
@@ -41,6 +42,7 @@ public class OpacityBlock extends Block {
 			}).size(40f); 
         }
 		
+		@Override
         public float config(){
             return opacity;
         }
