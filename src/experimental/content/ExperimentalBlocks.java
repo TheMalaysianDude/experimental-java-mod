@@ -24,12 +24,20 @@ public class ExperimentalBlocks implements ContentList{
 	public static Block
 	
 	//experimental
-	switchBlock; //, opacity, rgb;
+	switchBlock, opacity; //, rgb;
 	
 	@Override
 	public void load(){
 		
 		switchBlock = new ConfigBlock("switch"){{
+			requirements(Category.effect, with(
+				Items.copper, 1
+			));
+			
+			size = 1;
+		}};
+		
+		opacity = new OpacityBlock("opacity"){{
 			requirements(Category.effect, with(
 				Items.copper, 1
 			));
