@@ -41,7 +41,6 @@ public class OpacityBlock extends Block {
 			}).size(40f); 
         }
 		
-        @Override
         public float config(){
             return opacity;
         }
