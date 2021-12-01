@@ -36,6 +36,14 @@ public class OpacityBlock extends Block {
 		public Float opacity;
 		
 		@Override
+		public void draw(){
+			super.draw();
+			Draw.alpha(opacity.floatValue());
+			Draw.rect(topRegion, x, y);
+			Draw.reset();
+		}
+		
+		@Override
         public void buildConfiguration(Table table){
 			table.slider(0f, 1f, 0.1f, 0f, value -> {
 				configure(value);
@@ -50,7 +58,7 @@ public class OpacityBlock extends Block {
 		@Override
         public void write(Writes write){
             super.write(write);
-            write.f(opacity.value);
+            write.f(opacity.floatValue());
         }
 
         @Override
