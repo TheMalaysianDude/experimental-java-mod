@@ -38,7 +38,7 @@ public class OpacityBlock extends Block {
 		@Override
 		public void draw(){
 			super.draw();
-			Draw.alpha(opacity.floatValue());
+			Draw.alpha(opacity);
 			Draw.rect(topRegion, x, y);
 			Draw.reset();
 		}
@@ -58,13 +58,13 @@ public class OpacityBlock extends Block {
 		@Override
         public void write(Writes write){
             super.write(write);
-            write.f(opacity.floatValue());
+            write.f(opacity);
         }
 
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
-            opacity.value = read.f();
+            opacity = read.f();
         }
 	}
 }
