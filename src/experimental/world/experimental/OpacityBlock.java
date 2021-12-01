@@ -50,13 +50,13 @@ public class OpacityBlock extends Block {
 		@Override
         public void write(Writes write){
             super.write(write);
-            write.f(opacity);
+            write.f(opacity.value);
         }
 
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
-            opacity = read.f();
+            opacity.value = read.f();
         }
 	}
 }
