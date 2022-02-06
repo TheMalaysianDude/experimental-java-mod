@@ -11,7 +11,6 @@ import experimental.world.experimental.*;
 public class DrawLiquidScale extends DrawBlock{
 	public TextureRegion liquid, top;
 	
-	@Override
     public void draw(Building build){
 		Block type = (Block)build.block;
 		float totalLiquids = build.liquids.total() / type.liquidCapacity;
