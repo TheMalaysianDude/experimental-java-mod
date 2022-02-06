@@ -6,7 +6,6 @@ import mindustry.graphics.*;
 import mindustry.world.*;
 import mindustry.world.draw.*;
 import mindustry.gen.*;
-import experimental.world.experimental.*;
 
 public class DrawLiquidScale extends DrawBlock{
 	public TextureRegion liquid, top;
@@ -31,8 +30,6 @@ public class DrawLiquidScale extends DrawBlock{
     public void load(Block block){
         liquid = Core.atlas.find(block.name + "-liquid");
         top = Core.atlas.find(block.name + "-top");
-		
-		DebugDrawer.drawers.add(this);
     }
 
     @Override
