@@ -11,7 +11,7 @@ public class DebugDrawer extends Block{
 		super(name);
 	}
 	
-	public DebugDrawerBuild extends Building{
+	public class DebugDrawerBuild extends Building{
 		
 	}
 }
