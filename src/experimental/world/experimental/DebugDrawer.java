@@ -6,7 +6,7 @@ import mindustry.gen.*;
 import mindustry.world.draw.*;
 
 public class DebugDrawer extends Block{
-	static Seq<DrawBlock> drawers = new Seq<>();
+	public static Seq<DrawBlock> drawers = new Seq<>();
 	
 	public DebugDrawer(String name){
 		super(name);
