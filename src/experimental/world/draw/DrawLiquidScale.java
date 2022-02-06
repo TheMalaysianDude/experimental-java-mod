@@ -13,6 +13,9 @@ public class DrawLiquidScale extends DrawBlock{
 	
 	@Override
     public void draw(Building build){
+		Block type = (Block)build.block;
+		float totalLiquids = build.liquids.total() / type.liquidCapacity;
+		
 		Draw.rect(build.block.region, build.x, build.y);
 		
 		Draw.color(build.liquids.current().color);
