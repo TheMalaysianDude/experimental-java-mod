@@ -4,12 +4,12 @@ import arc.*;
 import arc.graphics.g2d.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
-import mindustry.world.draw.*;
 import mindustry.gen.*;
 
-public class DrawLiquidScale extends DrawBlock{
+public class DrawLiquidScale extends ExDrawBlock{
 	public TextureRegion liquid, top;
 	
+	@Override
     public void draw(Building build){
 		Block type = (Block)build.block;
 		float totalLiquids = build.liquids.total() / type.liquidCapacity;
