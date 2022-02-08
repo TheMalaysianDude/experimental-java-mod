@@ -26,13 +26,13 @@ public class DebugDrawer extends Block{
 		autoResetEnabled = false;
 		group = BlockGroup.none;
 		
-		config(float.class, (DebugDrawerBuild tile, float value) -> tile.progress = value);
+		progress(float.class, (DebugDrawerBuild tile, float value) -> tile.progress = value);
 		drawer(DrawBlock.class, (DebugDrawerBuild tile, DrawBlock value) -> tile.drawer = value);
 	}
 	
 	public class DebugDrawerBuild extends Building{
 		public @Nullable DrawBlock drawer;
-		public Float progress;
+		public float progress;
 		
 		public DrawBlock drawer(){
 			return drawer;
