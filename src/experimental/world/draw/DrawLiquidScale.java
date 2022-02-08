@@ -5,7 +5,6 @@ import arc.graphics.g2d.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
 import mindustry.gen.*;
-import experimental.world.draw.*;
 
 public class DrawLiquidScale extends ExDrawBlock{
 	public TextureRegion liquid, top;
