@@ -15,7 +15,7 @@ import experimental.world.draw.*;
 
 public class DebugDrawer extends Block{
 	public static DrawBlock[] drawers = {
-		new DrawLiquidScale
+		new DrawLiquidScale();
 	};
 	
 	public DebugDrawer(String name){
@@ -24,7 +24,7 @@ public class DebugDrawer extends Block{
 		update = true;
 		drawDisabled = false;
 		autoResetEnabled = false;
-		group = BlockGroup.none
+		group = BlockGroup.none;
 		
 		config(float.class, (DebugDrawerBuild tile, float value) -> tile.progress = value);
 		drawer(DrawBlock.class, (DebugDrawerBuild tile, DrawBlock value) -> tile.drawer = value);
