@@ -15,7 +15,7 @@ import experimental.world.draw.*;
 
 public class DebugDrawer extends Block{
 	public static DrawBlock[] drawers = {
-		new DrawLiquidScale();
+		new DrawLiquidScale()
 	};
 	
 	public DebugDrawer(String name){
