@@ -15,7 +15,7 @@ import mindustry.world.meta.*;
 import experimental.world.draw.*;
 
 public class DebugDrawer extends Block{
-	public static DrawBlock[] drawers = {
+	public static ExDrawBlock[] drawers = {
 		new DrawLiquidScale()
 	};
 	
@@ -28,14 +28,14 @@ public class DebugDrawer extends Block{
 		group = BlockGroup.none;
 		
 		config(float.class, (DebugDrawerBuild tile, float value) -> tile.progress = value);
-		config(DrawBlock.class, (DebugDrawerBuild tile, DrawBlock value) -> tile.drawer = value);
+		config(ExDrawBlock.class, (DebugDrawerBuild tile, ExDrawBlock value) -> tile.drawer = value);
 	}
 	
 	public class DebugDrawerBuild extends Building{
-		public @Nullable DrawBlock drawer;
+		public @Nullable ExDrawBlock drawer;
 		public float progress;
 		
-		public DrawBlock drawer(){
+		public ExDrawBlock drawer(){
 			return drawer;
 		}
 		
@@ -45,7 +45,7 @@ public class DebugDrawer extends Block{
 		
 		@Override
 		public void draw(){
-			drawer.draw((Building)this);
+			if(drawer != null) drawer.draw((Building)this);
 		}
 		
 		@Override
@@ -54,7 +54,7 @@ public class DebugDrawer extends Block{
 				configure(value);
 			}).growX().row();
 			table.pane(it -> {
-				for (DrawBlock drawBlock : drawers){
+				for (ExDrawBlock drawBlock : drawers){
 					it.button(drawBlock.getClass().getSimpleName(), () -> {
 						configure(drawBlock);
 					}).growX().row();
