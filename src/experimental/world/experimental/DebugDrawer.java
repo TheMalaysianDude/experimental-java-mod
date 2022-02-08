@@ -10,6 +10,7 @@ import mindustry.gen.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
 import mindustry.world.draw.*;
+import mindustry.world.meta.*;
 
 import experimental.world.draw.*;
 
@@ -26,8 +27,8 @@ public class DebugDrawer extends Block{
 		autoResetEnabled = false;
 		group = BlockGroup.none;
 		
-		progress(float.class, (DebugDrawerBuild tile, float value) -> tile.progress = value);
-		drawer(DrawBlock.class, (DebugDrawerBuild tile, DrawBlock value) -> tile.drawer = value);
+		config(float.class, (DebugDrawerBuild tile, float value) -> tile.progress = value);
+		config(DrawBlock.class, (DebugDrawerBuild tile, DrawBlock value) -> tile.drawer = value);
 	}
 	
 	public class DebugDrawerBuild extends Building{
@@ -44,7 +45,7 @@ public class DebugDrawer extends Block{
 		
 		@Override
 		public void draw(){
-			drawer.draw(this);
+			drawer.draw((Building)this);
 		}
 		
 		@Override
