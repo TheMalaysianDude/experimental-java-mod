@@ -11,12 +11,12 @@ import experimental.world.experimental.*;
 	 protected static final Rand rand = new Rand();
 
     /** Draws the block. */
-    public void draw(DebugDrawer build){
+    public void draw(DebugDrawerBuild build){
         Draw.rect(build.block.region, build.x, build.y, build.block.rotate ? build.rotdeg() : 0);
     }
 
     /** Draws any extra light for the block. */
-    public void drawLight(DebugDrawer build){
+    public void drawLight(DebugDrawerBuild build){
 
     }
 
