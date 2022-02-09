@@ -3,7 +3,7 @@ package experimental.world.draw;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import mindustry.world.*;
-import mindustry.gen.*;
+import experimental.world.experimental.*;
 
 /** An implementation of custom rendering behavior for a block.
  * This is used mostly for mods. */
@@ -11,12 +11,12 @@ import mindustry.gen.*;
 	 protected static final Rand rand = new Rand();
 
     /** Draws the block. */
-    public void draw(Building build){
+    public void draw(DebugDrawer build){
         Draw.rect(build.block.region, build.x, build.y, build.block.rotate ? build.rotdeg() : 0);
     }
 
     /** Draws any extra light for the block. */
-    public void drawLight(Building build){
+    public void drawLight(DebugDrawer build){
 
     }
 

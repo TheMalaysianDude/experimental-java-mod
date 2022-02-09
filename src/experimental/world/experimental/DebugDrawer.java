@@ -27,6 +27,7 @@ public class DebugDrawer extends Block{
 		autoResetEnabled = false;
 		group = BlockGroup.none;
 		
+		
 		config(Float.class, (DebugDrawerBuild tile, Float value) -> tile.progress = value);
 		config(ExDrawBlock.class, (DebugDrawerBuild tile, ExDrawBlock value) -> tile.drawer = value);
 	}

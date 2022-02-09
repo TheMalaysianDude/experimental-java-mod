@@ -10,7 +10,7 @@ public class DrawLiquidScale extends ExDrawBlock{
 	public TextureRegion liquid, top;
 	
 	@Override
-    public void draw(Building build){
+    public void draw(DebugDrawer build){
 		Block type = (Block)build.block;
 		Float totalLiquids = build.progress;//build.liquids.total() / type.liquidCapacity;
 		
