@@ -29,6 +29,15 @@ public class DebugDrawer extends Block{
 		
 	}
 	
+	@Override
+	public void load(){
+		super.load();
+		
+		for (ExDrawBlock drawBlock : drawers){
+			drawBlock.load(this);
+		}
+	}
+	
 	public class DebugDrawerBuild extends Building{
 		public @Nullable ExDrawBlock drawer;
 		public Float progress = 0f;
