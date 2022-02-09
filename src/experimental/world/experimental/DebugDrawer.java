@@ -46,7 +46,7 @@ public class DebugDrawer extends Block{
 		
 		@Override
 		public void draw(){
-			if(drawer != null) drawer.draw((Building)this);
+			if(drawer != null) drawer.draw(this);
 		}
 		
 		@Override
