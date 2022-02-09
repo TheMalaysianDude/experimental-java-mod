@@ -55,7 +55,7 @@ public class DebugDrawer extends Block{
 				for (ExDrawBlock drawBlock : drawers){
 					it.button(drawBlock.getClass().getSimpleName(), () -> {
 						drawer = drawBlock;
-					}).growX()
+					}).growX();
 					it.row();
 				}
 			});
