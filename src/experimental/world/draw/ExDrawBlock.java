@@ -3,7 +3,8 @@ package experimental.world.draw;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import mindustry.world.*;
-import experimental.world.experimental.*;
+
+import experimental.world.experimental.DebugDrawer.*;
 
 /** An implementation of custom rendering behavior for a block.
  * This is used mostly for mods. */
