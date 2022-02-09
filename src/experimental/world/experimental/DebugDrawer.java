@@ -33,7 +33,7 @@ public class DebugDrawer extends Block{
 	
 	public class DebugDrawerBuild extends Building{
 		public @Nullable ExDrawBlock drawer;
-		public Float progress;
+		public Float progress = 0f;
 		
 		public ExDrawBlock drawer(){
 			return drawer;
