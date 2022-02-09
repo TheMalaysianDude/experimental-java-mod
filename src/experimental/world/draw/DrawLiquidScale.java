@@ -12,7 +12,7 @@ public class DrawLiquidScale extends ExDrawBlock{
 	@Override
     public void draw(Building build){
 		Block type = (Block)build.block;
-		float totalLiquids = build.progress//build.liquids.total() / type.liquidCapacity;
+		float totalLiquids = build.progress;//build.liquids.total() / type.liquidCapacity;
 		
 		Draw.rect(build.block.region, build.x, build.y);
 		
