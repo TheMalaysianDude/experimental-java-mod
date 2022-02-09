@@ -27,9 +27,6 @@ public class DebugDrawer extends Block{
 		autoResetEnabled = false;
 		group = BlockGroup.none;
 		
-		
-		config(Float.class, (DebugDrawerBuild tile, Float value) -> tile.progress = value);
-		config(ExDrawBlock.class, (DebugDrawerBuild tile, ExDrawBlock value) -> tile.drawer = value);
 	}
 	
 	public class DebugDrawerBuild extends Building{
@@ -52,13 +49,14 @@ public class DebugDrawer extends Block{
 		@Override
 		public void buildConfiguration(Table table){
 			table.slider(0f, 1f, 0.01f, progress, value -> {
-				configure(value);
+				progress = value;
 			}).growX().row();
 			table.pane(it -> {
 				for (ExDrawBlock drawBlock : drawers){
 					it.button(drawBlock.getClass().getSimpleName(), () -> {
-						configure(drawBlock);
-					}).growX().row();
+						drawer = drawBlock;
+					}).growX()
+					it.row();
 				}
 			});
 		}
