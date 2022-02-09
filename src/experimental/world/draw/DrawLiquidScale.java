@@ -6,6 +6,8 @@ import mindustry.graphics.*;
 import mindustry.world.*;
 import mindustry.gen.*;
 
+import experimental.world.experimental.DebugDrawer.*;
+
 public class DrawLiquidScale extends ExDrawBlock{
 	public TextureRegion liquid, top;
 	
