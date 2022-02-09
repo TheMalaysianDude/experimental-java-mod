@@ -18,7 +18,7 @@ public class DrawLiquidScale extends ExDrawBlock{
 		
 		Draw.rect(build.block.region, build.x, build.y);
 		
-		Draw.color(build.liquids.current().color);
+		//Draw.color(build.liquids.current().color);
 		Draw.rect(liquid, build.x, build.y, 
 			(liquid.width/4) * totalLiquids,
 			(liquid.height/4) * totalLiquids
