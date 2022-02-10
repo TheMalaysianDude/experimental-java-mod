@@ -29,7 +29,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 				Draw.rect(sprite,
 					build.x - splitWidth/2 + splitWidth*x, build.y - splitHeight/2 + splitHeight*y,
 					width/split, height/split,
-					width/split*x, height/split.y,
+					width/split*x, height/split*y,
 					0
 				);
 			}
