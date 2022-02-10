@@ -27,8 +27,9 @@ public class DebugDrawer extends Block{
 		drawDisabled = false;
 		autoResetEnabled = false;
 		group = BlockGroup.none;
+		size = 3;
 		
-		config(Integer.class, (DebugDrawerBuild entity, int value) -> entity.drawer = value);
+		config(Integer.class, (DebugDrawerBuild entity, Integer value) -> entity.drawer = value);
 		config(Float.class, (DebugDrawerBuild entity, Float value) -> entity.progress = value);
 	}
 	
@@ -42,10 +43,10 @@ public class DebugDrawer extends Block{
 	}
 	
 	public class DebugDrawerBuild extends Building{
-		public int drawer = -1;
+		public Integer drawer = -1;
 		public Float progress = 0f;
 		
-		public ExDrawBlock drawer(){
+		public Integer drawer(){
 			return drawer;
 		}
 		
@@ -55,7 +56,8 @@ public class DebugDrawer extends Block{
 		
 		@Override
 		public void draw(){
-			if(drawer != -1) drawers[drawer].draw(this);
+			if(drawer != -1) drawers[drawer].draw(this) return;
+			Draw.rect(region, x, y);
 		}
 		
 		@Override
