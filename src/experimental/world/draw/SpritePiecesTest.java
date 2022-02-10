@@ -20,8 +20,8 @@ public class SpritePiecesTest extends ExDrawBlock{
 		int width = sprite.width;
 		int height = sprite.height;
 		
-		for(int i = 0; i < size; i++){
-			Draw.rect(sprite, x - (width/2) + (i*width/split), y - (height/2) + (i*height/split)
+		for(int i = 0; i < type.size; i++){
+			Draw.rect(sprite, build.x - (width/2) + (i*width/split), build.y - (height/2) + (i*height/split)
 			
 			);
 		}
