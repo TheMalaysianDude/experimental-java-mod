@@ -72,7 +72,7 @@ public class DebugDrawer extends Block{
 			
 			table.pane(it -> {
 				for(int i = 0; i < drawers.length; i++){
-					int current = i
+					int current = i;
 					it.button(drawers[current].getClass().getSimpleName(), () -> {
 						if(drawer == current){
 							 configure(-1); 
