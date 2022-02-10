@@ -50,7 +50,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 		
 		for(int x = 0; x < split; x++){
 			for(int y = 0; y < split; y++){
-				pieces[split * y + x] = new TextureRegion(sprite, 
+				pieces[split * y + x] = new TextureRegion(sprite.texture, 
 					sprite.u/2 * x, sprite.v/2 * y, 
 					sprite.u2/2 * (x + 1), sprite.v2 * (y + 1)
 				);
