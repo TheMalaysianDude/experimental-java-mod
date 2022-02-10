@@ -11,7 +11,7 @@ import experimental.world.experimental.DebugDrawer.*;
 public class SpritePiecesTest extends ExDrawBlock{
 	public TextureRegion sprite;
 	public int split = 2;
-	//public float[] positions = {};
+	//public float[,] positions = {};
 	
 	@Override
 	public void draw(DebugDrawerBuild build){
@@ -26,7 +26,12 @@ public class SpritePiecesTest extends ExDrawBlock{
 		Draw.rect(type.region, build.x, build.y);
 		for(int x = 0; x < split; x++){
 			for(int y = 0; y < split; y++){
-				Draw.rect(sprite, build.x - splitWidth/2 + splitWidth*x, build.y - splitHeight/2 + splitHeight*y);
+				Draw.rect(sprite,
+					build.x - splitWidth/2 + splitWidth*x, build.y - splitHeight/2 + splitHeight*y,
+					width/split, height/split,
+					width/split*x, height/split.y,
+					0
+				);
 			}
 		}
 	}
