@@ -56,7 +56,11 @@ public class DebugDrawer extends Block{
 		
 		@Override
 		public void draw(){
-			if(drawer != -1) drawers[drawer].draw(this); return;
+			if(drawer != -1){
+				drawers[drawer].draw(this); 
+				return;
+			}
+			
 			Draw.rect(region, x, y);
 		}
 		
@@ -65,10 +69,14 @@ public class DebugDrawer extends Block{
 			table.slider(0f, 1f, 0.01f, progress, value -> {
 				configure(value);
 			}).growX().row();
+			
 			table.pane(it -> {
 				for(int i = 0; i < drawers.length; i++){
 					it.button(drawers[i].getClass().getSimpleName(), () -> {
-						if(i == drawer) configure(-1); return;
+						if(drawer == i){
+							 configure(-1); 
+							 return;
+						}
 						configure(i);
 						
 					}).grow();
