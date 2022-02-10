@@ -16,7 +16,8 @@ import experimental.world.draw.*;
 
 public class DebugDrawer extends Block{
 	public static ExDrawBlock[] drawers = {
-		new DrawLiquidScale()
+		new DrawLiquidScale(),
+		new SpritePiecesTest()
 	};
 	
 	public DebugDrawer(String name){
@@ -27,6 +28,8 @@ public class DebugDrawer extends Block{
 		autoResetEnabled = false;
 		group = BlockGroup.none;
 		
+		config(Integer.class, (DebugDrawerBuild entity, int value) -> entity.drawer = value);
+		config(Float.class, (DebugDrawerBuild entity, Float value) -> entity.progress = value);
 	}
 	
 	@Override
@@ -39,7 +42,7 @@ public class DebugDrawer extends Block{
 	}
 	
 	public class DebugDrawerBuild extends Building{
-		public @Nullable ExDrawBlock drawer;
+		public int drawer = -1;
 		public Float progress = 0f;
 		
 		public ExDrawBlock drawer(){
@@ -52,18 +55,20 @@ public class DebugDrawer extends Block{
 		
 		@Override
 		public void draw(){
-			if(drawer != null) drawer.draw(this);
+			if(drawer != -1) drawers[drawer].draw(this);
 		}
 		
 		@Override
 		public void buildConfiguration(Table table){
 			table.slider(0f, 1f, 0.01f, progress, value -> {
-				progress = value;
+				configure(value);
 			}).growX().row();
 			table.pane(it -> {
-				for (ExDrawBlock drawBlock : drawers){
-					it.button(drawBlock.getClass().getSimpleName(), () -> {
-						drawer = drawBlock;
+				for(int i = 0; i < drawers.length, i++){
+					it.button(drawers[i].getClass().getSimpleName(), () -> {
+						if(i == drawer) configure(-1); return;
+						configure(i);
+						
 					}).grow();
 					it.row();
 				}
