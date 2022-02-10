@@ -64,7 +64,7 @@ public class DebugDrawer extends Block{
 				configure(value);
 			}).growX().row();
 			table.pane(it -> {
-				for(int i = 0; i < drawers.length, i++){
+				for(int i = 0; i < drawers.length; i++){
 					it.button(drawers[i].getClass().getSimpleName(), () -> {
 						if(i == drawer) configure(-1); return;
 						configure(i);
