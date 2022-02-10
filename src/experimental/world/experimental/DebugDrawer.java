@@ -56,7 +56,7 @@ public class DebugDrawer extends Block{
 		
 		@Override
 		public void draw(){
-			if(drawer != -1) drawers[drawer].draw(this) return;
+			if(drawer != -1) drawers[drawer].draw(this); return;
 			Draw.rect(region, x, y);
 		}
 		
