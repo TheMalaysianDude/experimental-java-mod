@@ -26,7 +26,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 		Draw.rect(type.region, build.x, build.y);
 		for(int x = 0; x < split; x++){
 			for(int y = 0; y < split; y++){
-				Draw.rect(sprite, build.x - splitWidth + splitWidth*x, build.y - splitHeight + splitHeight*y);
+				Draw.rect(sprite, build.x - splitWidth/2 + splitWidth*x, build.y - splitHeight/2 + splitHeight*y);
 			}
 		}
 	}
