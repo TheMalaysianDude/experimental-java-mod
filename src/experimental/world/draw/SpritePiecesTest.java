@@ -22,15 +22,16 @@ public class SpritePiecesTest extends ExDrawBlock{
 		int width = sprite.width;
 		int height = sprite.height;
 		//offset from center
-		int splitWidth = width/(split*8);
-		int splitHeight = height/(split*8);
+		//int splitWidth = width/(split*4);
+		//int splitHeight = height/(split*4);
 		
 		Draw.rect(type.region, build.x, build.y);
-		for(int x = 0; x < split; x++){
-			for(int y = 0; y < split; y++){
+		for(int y = 0; y < split; y++){
+			for(int x = 0; x < split; x++){
 				TextureRegion piece = pieces[x][y];
-				Draw.rect(piece, build.x - splitWidth/2 + splitWidth*x, build.y - splitHeight/2 + splitHeight*y,
-				piece.width * build.progress, piece.height * build.progress, 0
+				Draw.rect(piece, 
+					build.x + piece.width*x,
+					build.y + piece.height*y,
 				);
 			}
 		}
