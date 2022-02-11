@@ -12,7 +12,7 @@ import experimental.world.experimental.DebugDrawer.*;
 public class SpritePiecesTest extends ExDrawBlock{
 	public int split = 2;
 	public TextureRegion sprite;
-	public TextureRegion[] pieces = new TextureRegion[split * split];
+	public TextureRegion[][] pieces = new TextureRegion[][];
 	//public float[,] positions = {};
 	
 	@Override
@@ -28,19 +28,11 @@ public class SpritePiecesTest extends ExDrawBlock{
 		Draw.rect(type.region, build.x, build.y);
 		for(int x = 0; x < split; x++){
 			for(int y = 0; y < split; y++){
-				TextureRegion piece = pieces[split * y + x];
+				TextureRegion piece = pieces[x][y];
 				Draw.rect(piece,
 					build.x + build.x - splitWidth/2 + splitWidth*x, build.y - splitHeight/2 + splitHeight*y,
 					0
 				);
-				/*
-				Draw.rect(sprite,
-					build.x - splitWidth/2 + splitWidth*x, build.y - splitHeight/2 + splitHeight*y,
-					splitWidth, splitHeight,
-					splitWidth*x, splitHeight*y,
-					0
-				);
-				*/
 			}
 		}
 	}
@@ -49,15 +41,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 	public void load(Block block){
 		sprite = Core.atlas.find(block.name + "-sprite");
 		
-		for(int x = 0; x < split; x++){
-			for(int y = 0; y < split; y++){
-				pieces[split * y + x] = new TextureRegion(sprite.texture,
-					sprite.getX() + (sprite.width/split * x), sprite.getY() + (sprite.width/split * y), 
-					sprite.width/split, sprite.height/split
-				);
-				Log.info("{" + (sprite.getX() + (sprite.width/split * x)) + ", " + (sprite.getY() + (sprite.width/split * y)) + "}, {" + (sprite.width/split) + "," + (sprite.height/split) + "}");
-			}
-		}
+		pieces = sprite.split(sprite.width/split, sprite.height/split);
 	}
 	
 	@Override
