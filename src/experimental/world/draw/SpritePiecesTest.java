@@ -24,10 +24,11 @@ public class SpritePiecesTest extends ExDrawBlock{
 		Draw.rect(type.region, build.x, build.y);
 		for(int x = 0; x < split; x++){
 			for(int y = 0; y < split; y++){
+				var magnitude = build.block.size * 8 * build.progress
 				TextureRegion piece = pieces[x][y];
 				Draw.rect(piece, 
-					build.x + build.block.size * 8 * ((x - split / 2) / split) * build.progress,
-					build.y + build.block.size * 8 * ((split - y / 2) / split) * build.progress
+					build.x + magnitude * ((x - split / 2f) / split),
+					build.y + magnitude * ((split / 2f - y) / split)
 				);
 			}
 		}
