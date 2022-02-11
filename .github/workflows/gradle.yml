@@ -26,7 +26,5 @@ jobs:
       run: git tag -d test
     - name: Destroy payload-test tag
       run: git tag -d payload-test
-    - name: Push changes for test
-      run: git push --tags test
-    - name: Push changes for payload-test
-      run: git push --tags payload-test
+    - name: Push changes for tags
+      run: git push --tags
