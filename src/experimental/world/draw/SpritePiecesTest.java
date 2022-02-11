@@ -12,7 +12,7 @@ import experimental.world.experimental.DebugDrawer.*;
 public class SpritePiecesTest extends ExDrawBlock{
 	public int split = 2;
 	public TextureRegion sprite;
-	public TextureRegion[][] pieces = new TextureRegion[split-1][split-1];
+	public TextureRegion[][] pieces;
 	
 	@Override
 	public void draw(DebugDrawerBuild build){
@@ -24,10 +24,14 @@ public class SpritePiecesTest extends ExDrawBlock{
 		Draw.rect(type.region, build.x, build.y);
 		for(int x = 0; x < split; x++){
 			for(int y = 0; y < split; y++){
+				var magnitude = build.block.size * 8 * build.progress / split;
+				var powerX = x - (split - 1) / 2f;
+				var powerY = (split - 1) / 2f - y;
+
 				TextureRegion piece = pieces[x][y];
 				Draw.rect(piece, 
-					build.x + piece.width*(x*build.progress),
-					build.y + piece.height*(y*build.progress)
+					build.x + magnitude * powerX + piece.width * powerX / split / 2,
+					build.y + magnitude * powerY + piece.height * powerY / split / 2
 				);
 			}
 		}
