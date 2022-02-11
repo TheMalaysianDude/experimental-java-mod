@@ -54,6 +54,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 					sprite.u/2 * x, sprite.v/2 * y, 
 					sprite.u2/2 * (x + 1), sprite.v2 * (y + 1)
 				);
+				Log.info("{" + sprite.u/2 * x + ", " + sprite.v/2 * y + "}, {" + sprite.u2/2 * (x + 1) + "," + sprite.v2 * (y + 1) + "}");
 			}
 		}
 	}
