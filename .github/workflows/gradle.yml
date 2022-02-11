@@ -22,9 +22,3 @@ jobs:
       with:
         name: ${{ github.event.repository.name }}
         path: build/libs/${{ github.event.repository.name }}.jar
-    - name: Destroy test tag
-      run: git tag -d test
-    - name: Destroy payload-test tag
-      run: git tag -d payload-test
-    - name: Push changes for tags
-      run: git push --tags
