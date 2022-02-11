@@ -85,5 +85,26 @@ public class DebugDrawer extends Block{
 				}
 			}).grow();
 		}
+		
+		@Override
+        public byte version(){
+            return 1;
+        }
+
+        @Override
+        public void read(Reads read, byte revision){
+            super.read(read, revision);
+			
+            progress = read.f();
+			drawer = read.i();
+        }
+
+        @Override
+        public void write(Writes write){
+            super.write(write);
+
+            write.f(progress);
+			write.i(drawer);
+        }
 	}
 }
