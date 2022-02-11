@@ -10,7 +10,7 @@ import mindustry.gen.*;
 import experimental.world.experimental.DebugDrawer.*;
 
 public class SpritePiecesTest extends ExDrawBlock{
-	public int split = 2;
+	public int split = 3;
 	public TextureRegion sprite;
 	public TextureRegion[][] pieces;
 	
