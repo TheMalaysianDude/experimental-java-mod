@@ -22,3 +22,22 @@ jobs:
       with:
         name: ${{ github.event.repository.name }}
         path: build/libs/${{ github.event.repository.name }}.jar
+  Upload:
+    needs: buildJar
+    runs-on: ubuntu-latest
+    env:
+      GH_REPO: ${{ github.repository }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/download-artifact@v2
+      with:
+          name: mind-util
+          path: out
+    - name: Delete and recreate tag
+      run: |
+        gh release delete dev --yes || true
+        git push origin :dev || true
+          
+    - name: Upload development build
+      run: gh release create dev --title "Development Build" --notes-file "$GITHUB_WORKSPACE/.github/workflows/notes.md" out/*.jar
