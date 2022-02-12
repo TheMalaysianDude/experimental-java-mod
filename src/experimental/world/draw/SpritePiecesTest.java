@@ -44,7 +44,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 				
 				//basically 0 to 1 for each piece
 				float row = 1f/(split*split);
-				if(build.progress >= indexRow){
+				if(build.progress >= row*index){
 					float progress = ((row*index) - build.progress) / row;
 					
 					Log.info("[" + index + "]: " + progress);
