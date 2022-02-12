@@ -54,10 +54,10 @@ public class SpritePiecesTest extends ExDrawBlock{
 					TextureRegion piece = pieces[x][y];
 					
 					Draw.rect(piece, 
-						build.x + powerX + piece.width * powerX / 4,
-						build.y + powerY + piece.height * powerY / 4
-						//piece.width/4 * progress,
-						//piece.height/4 * progress
+						build.x + powerX + piece.width * powerX / 8,
+						build.y + powerY + piece.height * powerY / 8,
+						piece.width/4 * progress,
+						piece.height/4 * progress
 					);
 				}
 				
