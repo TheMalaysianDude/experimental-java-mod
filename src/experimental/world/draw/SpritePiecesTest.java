@@ -43,23 +43,24 @@ public class SpritePiecesTest extends ExDrawBlock{
 				*/
 				
 				//basically 0 to 1 for each piece
-				//float process = (index+1)/(float)(split*split);
-				//distance between progress and index/split
-				//plus 1 minus 1 to prevent division by 0
-				float experimental = Math.abs((1 - (1f/(split*split)*(index+1))) - build.progress);
-				float percentage = Mathf.clamp(build.progress, 0, 1f/(split*split)*(index+1));
-				float progress = percentage/(1f/(split*split)*(index+1));
-				Log.info("[" + index + "]: " + experimental);
-				var powerX = x - (split - 1) / 2f;
-				var powerY = (split - 1) / 2f - y;
+				float row = 1f/(split*split);
+				if(build.progress >= indexRow){
+					float progress = ((row*index) - build.progress) / row;
+					
+					Log.info("[" + index + "]: " + progress);
+					var powerX = x - (split - 1) / 2f;
+					var powerY = (split - 1) / 2f - y;
 				
-				TextureRegion piece = pieces[x][y];
-				Draw.rect(piece, 
-					build.x + powerX + piece.width * powerX / 4,
-					build.y + powerY + piece.height * powerY / 4,
-					piece.width/4 * progress,
-					piece.height/4 * progress
-				);
+					TextureRegion piece = pieces[x][y];
+					Draw.rect(piece, 
+						build.x + powerX + piece.width * powerX / 4,
+						build.y + powerY + piece.height * powerY / 4,
+						piece.width/4 * progress,
+						piece.height/4 * progress
+					);
+				}
+				
+				
 			}
 		}
 	}
