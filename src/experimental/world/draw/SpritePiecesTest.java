@@ -44,7 +44,8 @@ public class SpritePiecesTest extends ExDrawBlock{
 				
 				//basically 0 to 1 for each piece
 				//float process = (index+1)/(float)(split*split);
-				float progress = Mathf.clamp(build.progress, (1/(float)(split*split))*index, (1/(float)(split*split))*(index+1)) / (1/(float)(split*split))*(index+1);
+				float progress = (build.progress+1f)/(((index+1f)/(split*split))+1f);
+				Log.info(progress);
 				var powerX = x - (split - 1) / 2f;
 				var powerY = (split - 1) / 2f - y;
 				
