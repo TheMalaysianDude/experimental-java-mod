@@ -52,7 +52,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 					var powerY = (split - 1) / 2f - y;
 				
 					TextureRegion piece = pieces[x][y];
-					Log.info("x: " + powerX + ", y: " + powerY);
+					
 					Draw.rect(piece, 
 						build.x + powerX + piece.width * powerX / 4,
 						build.y + powerY + piece.height * powerY / 4,
