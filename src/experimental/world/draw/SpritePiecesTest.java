@@ -55,9 +55,9 @@ public class SpritePiecesTest extends ExDrawBlock{
 					
 					Draw.rect(piece, 
 						build.x + powerX + piece.width * powerX / 4,
-						build.y + powerY + piece.height * powerY / 4,
-						piece.width/4 * progress,
-						piece.height/4 * progress
+						build.y + powerY + piece.height * powerY / 4
+						//piece.width/4 * progress,
+						//piece.height/4 * progress
 					);
 				}
 				
