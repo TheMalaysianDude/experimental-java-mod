@@ -12,6 +12,7 @@ import experimental.world.experimental.DebugDrawer.*;
 
 public class SpritePiecesTest extends ExDrawBlock{
 	public int split = 2;
+	public TextureRegion[] sprites = new TextureRegion[]{};
 	public TextureRegion sprite;
 	public TextureRegion[][] pieces;
 	
