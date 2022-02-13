@@ -63,8 +63,8 @@ public class SpritePiecesTest extends ExDrawBlock{
 		float baseY = Angles.trnsy(build.rotdeg(), 0, type.size * 8);
 		
 		Draw.rect(armBase,
-			build.x + x,
-			build.y + y,
+			build.x + baseX,
+			build.y + baseY,
 			build.rotation
 		);
 	}
