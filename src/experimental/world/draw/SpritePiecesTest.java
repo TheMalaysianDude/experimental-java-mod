@@ -71,7 +71,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 		
 		if(!texture.found()) return;
 		sprite = texture;
-		pieces = sprite.texture.split(sprite.width/split, sprite.height/split);
+		pieces = sprite.split(sprite.width/split, sprite.height/split);
 	}
 	
 	@Override
