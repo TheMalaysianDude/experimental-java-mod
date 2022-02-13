@@ -66,12 +66,10 @@ public class SpritePiecesTest extends ExDrawBlock{
 		);
 	}
 	
-	public void loadSprite(String name){
-		TextureRegion texture = Core.atlas.find(name);
-		
+	public void setSprite(TextureRegion texture){
 		if(!texture.found()) return;
 		sprite = texture;
-		pieces = sprite.split(sprite.width/split, sprite.height/split);
+		pieces = texture.split(texture.width/split, texture.height/split);
 	}
 	
 	@Override
@@ -83,7 +81,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 		armHead = Core.atlas.find(block.name + "-arm-head");
 		armSide = Core.atlas.find(block.name + "-arm-side");
 		
-		loadSprite(sprite);
+		setSprite(sprite);
 	}
 	
 	@Override
