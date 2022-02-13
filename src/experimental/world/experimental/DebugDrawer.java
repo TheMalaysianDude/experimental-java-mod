@@ -28,6 +28,7 @@ public class DebugDrawer extends Block{
 		autoResetEnabled = false;
 		group = BlockGroup.none;
 		size = 3;
+		rotate = true;
 		
 		config(Integer.class, (DebugDrawerBuild entity, Integer value) -> entity.drawer = value);
 		config(Float.class, (DebugDrawerBuild entity, Float value) -> entity.progress = value);

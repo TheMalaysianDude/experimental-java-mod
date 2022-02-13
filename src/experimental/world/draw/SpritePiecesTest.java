@@ -57,11 +57,13 @@ public class SpritePiecesTest extends ExDrawBlock{
 			}
 		}
 		
-		float baseX = Angles.trnsx(build.rotdeg(), priorityPosition.x, type.size * 4);
+		TextureRegion piece = pieces[0][0];
+		
+		float baseX = Angles.trnsx(build.rotdeg(), piece.width * priorityPosition.x / 4, type.size * 4 - armBase.height / 2);
 		float baseY = Angles.trnsy(build.rotdeg(), 0, type.size * 4);
 		
-		float headX = Angles.trnsx(build.rotdeg(), priorityPosition.x, priorityPosition.y);
-		float headY = Angles.trnsy(build.rotdeg(), priorityPosition.x, priorityPosition.y);
+		float headX = Angles.trnsx(build.rotdeg(), piece.width * priorityPosition.x / 4, piece.height * priorityPosition.y / 4);
+		float headY = Angles.trnsy(build.rotdeg(), piece.width * priorityPosition.x / 4, piece.height * priorityPosition.y / 4);
 		
 		Draw.rect(armBase, build.x + baseX, build.y + baseY, build.rotation);
 		Draw.rect(armHead, build.x + headX, build.y + headY, build.rotation);
