@@ -22,7 +22,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 	public void draw(DebugDrawerBuild build){
 		Block type = (Block)build.block;
 		
-		if(!sprite.found() && sprites.length == 0) return;
+		if(!sprite.found() && pieces.length == 0) return;
 		
 		Draw.rect(type.region, build.x, build.y);
 		for(int cx = 0; cx < split; cx++){
