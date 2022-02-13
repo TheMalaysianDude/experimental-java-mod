@@ -15,7 +15,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 	public int split = 2;
 	
 	public TextureRegion sprite, armBase, armHead, armSide;
-	public TextureRegion[][] pieces;
+	public TextureRegion[] pieces;
 	public Vec2 priorityPosition = new Vec2();
 	
 	@Override
