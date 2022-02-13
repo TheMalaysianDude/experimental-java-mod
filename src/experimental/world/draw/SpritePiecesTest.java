@@ -16,6 +16,8 @@ public class SpritePiecesTest extends ExDrawBlock{
 	
 	public TextureRegion sprite, armBase, armHead, armSide;
 	public TextureRegion[][] pieces;
+	
+	public float progressRow;
 	public Vec2 priorityPosition = new Vec2();
 	
 	@Override
@@ -51,13 +53,14 @@ public class SpritePiecesTest extends ExDrawBlock{
 						build.rotation
 					);
 					
+					progressRow = progress;
 					priorityPosition.set(x, y);
 				}
 			}
 		}
 		
-		float x = Angles.trnsx(build.rotdeg(), priorityPosition.x, type.size * 4);
-		float y = Angles.trnsy(build.rotdeg(), 0, type.size * 4);
+		float baseX = Angles.trnsx(build.rotdeg(), priorityPosition.x * progressRow, type.size * 8);
+		float baseY = Angles.trnsy(build.rotdeg(), 0, type.size * 8);
 		
 		Draw.rect(armBase,
 			build.x + x,
