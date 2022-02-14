@@ -53,6 +53,7 @@ public class SpritePiecesTest extends ExDrawBlock{
 					);
 					
 					if(progress != 1) priorityPosition.set(x, y);
+					if(build.progress <- 0.01f) priorityPosition.set(0, 0);
 				}
 			}
 		}
