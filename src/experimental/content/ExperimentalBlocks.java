@@ -16,7 +16,9 @@ import mindustry.world.blocks.production.*;
 import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
+
 import experimental.world.experimental.*;
+import experimental.world.production.*;
 
 import static mindustry.type.ItemStack.*;
 
@@ -24,7 +26,9 @@ public class ExperimentalBlocks implements ContentList{
 	public static Block
 	
 	//experimental
-	switchBlock, opacity, debugDrawer; //, rgb;
+	switchBlock, opacity, debugDrawer, //, rgb;
+	//production
+	singleItemSource;
 	
 	@Override
 	public void load(){
@@ -40,5 +44,10 @@ public class ExperimentalBlocks implements ContentList{
 		debugDrawer = new DebugDrawer("debug-drawer"){{
 			requirements(Category.effect, BuildVisibility.sandboxOnly, with());
 		}};
+		
+		singleItemSource = new ItemProducer("single-item-source"){
+			requirements(Category.effect, BuildVisibility.sandboxOnly, with());
+			outputItem = Items.copper;
+		}
 	}
 }

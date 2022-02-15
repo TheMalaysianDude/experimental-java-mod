@@ -42,6 +42,15 @@ public class ItemProducer extends Block{
 		public float progress;
 		
 		@Override
+		public void draw(){
+			Draw.rect(region, x, y);
+			if(outputItem != null){
+				TextureRegion icon = outputItem.item.fullIcon
+				Draw.rect(icon, x, y, icon.width/4, icon.height/4);
+			}
+		}
+		
+		@Override
 		public void updateTile(){
 			progress += getProgressIncrease(waitTime);
 			
