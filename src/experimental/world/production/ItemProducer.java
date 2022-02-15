@@ -1,4 +1,4 @@
-package experimental.world.production.*;
+package experimental.world.production.;
 
 import arc.util.*;
 import arc.util.io.*;
