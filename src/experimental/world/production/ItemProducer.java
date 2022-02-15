@@ -30,11 +30,11 @@ public class ItemProducer extends Block{
 		super.setStats();
 		stats.add(Stat.productionTime, waitTime / 60f, StatUnit.seconds);
 		
-		if(outputItem != null) stats.add(Stat.output, outputItem};
+		if(outputItem != null) stats.add(Stat.output, outputItem);
 	}
 	
 	@Override
-	public void outputsItems(){
+	public boolean outputsItems(){
 		return outputItem != null;
 	}
 	
@@ -45,7 +45,7 @@ public class ItemProducer extends Block{
 		public void draw(){
 			Draw.rect(region, x, y);
 			if(outputItem != null){
-				TextureRegion icon = outputItem.item.fullIcon
+				TextureRegion icon = outputItem.item.fullIcon;
 				Draw.rect(icon, x, y, icon.width/4, icon.height/4);
 			}
 		}
@@ -66,7 +66,7 @@ public class ItemProducer extends Block{
 		}
 		
 		public void dumpOutput(){
-			if(outputItem != null && timer(timerDump, dumpTime / timeScale)) d
+			if(outputItem != null && timer(timerDump, dumpTime / timeScale)) dump(outputItem);
 		}
 		
 		@Override

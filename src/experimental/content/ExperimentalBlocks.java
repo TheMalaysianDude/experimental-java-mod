@@ -45,9 +45,9 @@ public class ExperimentalBlocks implements ContentList{
 			requirements(Category.effect, BuildVisibility.sandboxOnly, with());
 		}};
 		
-		singleItemSource = new ItemProducer("single-item-source"){
+		singleItemSource = new ItemProducer("single-item-source"){{
 			requirements(Category.effect, BuildVisibility.sandboxOnly, with());
 			outputItem = Items.copper;
-		}
+		}};
 	}
 }
