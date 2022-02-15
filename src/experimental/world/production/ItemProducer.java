@@ -63,13 +63,13 @@ public class ItemProducer extends Block{
 		}
 		
 		public void startOutput(){
-			if(outputItem != null) offload(outputItem);
+			if(outputItem != null) offload(outputItem.item);
 			
 			progress %= 1f;
 		}
 		
 		public void dumpOutput(){
-			if(outputItem != null && timer(timerDump, dumpTime / timeScale)) dump(outputItem);
+			if(outputItem != null && timer(timerDump, dumpTime / timeScale)) dump(outputItem.item);
 		}
 		
 		@Override
