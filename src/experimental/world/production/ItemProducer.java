@@ -63,7 +63,11 @@ public class ItemProducer extends Block{
 		}
 		
 		public void startOutput(){
-			if(outputItem != null) offload(outputItem.item);
+			if(outputItem != null){
+				for(int i = 0; i < outputItem.amount; i++){
+                    offload(outputItem.item);
+                }
+			}
 			
 			progress %= 1f;
 		}
