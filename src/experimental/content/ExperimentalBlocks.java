@@ -3,11 +3,13 @@ package experimental.content;
 import arc.graphics.*;
 import arc.math.*;
 import arc.struct.*;
+import mindustry.type.*;
 import mindustry.content.*;
 import mindustry.world.*;
+import mindustry.world.meta.*;
 import mindustry.world.draw.*;
 import mindustry.world.blocks.defense.turrets.*;
-import mindustry.world.meta.*;
+import mindustry.entities.part.*;
 
 import static mindustry.type.ItemStack.*;
 

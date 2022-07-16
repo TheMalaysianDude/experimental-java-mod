@@ -13,13 +13,16 @@ import experimental.content.*;
 public class ExperimentalJavaMod extends Mod{
 	
 	public ExperimentalJavaMod(){
-		
+		super();
+	}
+	
+	@Override
+	public void loadContent(){
+		ExperimentalBlocks.load()
 	}
 	
 	/*
-	private final ContentList[] experimentalContent = {
-		//new ExperimentalBlocks()
-	};
+	
 	
 	
 	
