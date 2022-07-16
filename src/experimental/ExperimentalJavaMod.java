@@ -12,14 +12,16 @@ import experimental.content.*;
 
 public class ExperimentalJavaMod extends Mod{
 	
+	public ExperimentalJavaMod(){
+		
+	}
+	
+	/*
 	private final ContentList[] experimentalContent = {
 		//new ExperimentalBlocks()
 	};
-	/*
-	public ExampleJavaMod(){
-		
-	}
-	*/
+	
+	
 	
 	@Override
     public void loadContent(){
@@ -27,4 +29,5 @@ public class ExperimentalJavaMod extends Mod{
             list.load();
         }
     }
+	*/
 }
