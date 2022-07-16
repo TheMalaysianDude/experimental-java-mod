@@ -1,5 +1,5 @@
 #the mod name as displayed in-game
-displayName: "example-java-mod"
+displayName: "mal-example-java-mod"
 
 #the internal name of your mod
 name: "example-java-mod"
