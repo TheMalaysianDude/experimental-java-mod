@@ -33,10 +33,12 @@ public class ExperimentalBlocks{
 					}}
 				);
 			}};
-		}}
+			
+			size = 6;
+			alwaysUnlocked = true;
+		}};
 		
-		size = 6;
-		alwaysUnlocked = true;
+		
 	}
 	
 	/*
