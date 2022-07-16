@@ -18,9 +18,8 @@ public class ExperimentalJavaMod extends Mod{
 	
 	@Override
 	public void loadContent(){
-		ExperimentalBlocks.load()
+		ExperimentalBlocks.load();
 	}
-	
 	/*
 	
 	
