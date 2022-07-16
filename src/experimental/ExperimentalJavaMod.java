@@ -13,7 +13,7 @@ import experimental.content.*;
 public class ExperimentalJavaMod extends Mod{
 	
 	private final ContentList[] experimentalContent = {
-		new ExperimentalBlocks()
+		//new ExperimentalBlocks()
 	};
 	/*
 	public ExampleJavaMod(){
