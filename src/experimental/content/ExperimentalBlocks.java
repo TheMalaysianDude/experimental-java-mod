@@ -27,7 +27,7 @@ public class ExperimentalBlocks{
 		clevicure = new ItemTurret("clevicure"){{
 			requirements(Category.turret, BuildVisibility.sandboxOnly, with());
 			ammo(
-				Items.copper,  new BasicBulletType(2.5f, 9){{
+				Items.graphite, new BasicBulletType(2.5f, 9){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -40,7 +40,7 @@ public class ExperimentalBlocks{
 					new RegionPart("-top"){{
 						progress = PartProgress.warmup;
 						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
-						y = 14.25f; x = 9.25;
+						y = 14.25f; x = 9.25f;
 						mirror = true;
 						turretShading = true;
 					}},
