@@ -44,6 +44,13 @@ public class ExperimentalBlocks{
 						mirror = true;
 						turretShading = true;
 					}},
+					new RegionPart("-bottom"){{
+						progress = PartProgress.warmup;
+						//moves.add(new PartMove(PartProgress.recoil, 0f, -0, 0f));
+						x = 14f; y = -14f; 
+						mirror = true;
+						turretShading = true;
+					}},
 					new RegionPart("-mid"){{
 						progress = PartProgress.warmup;
 						//moves.add(new PartMove(PartProgress.recoil, 0f, -0, 0f));
