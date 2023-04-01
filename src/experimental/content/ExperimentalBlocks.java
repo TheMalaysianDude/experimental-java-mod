@@ -3,6 +3,9 @@ package experimental.content;
 import arc.graphics.*;
 import arc.math.*;
 import arc.struct.*;
+import mindustry.entities.bullet.*;
+import mindustry.entities.effect.*;
+import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.content.*;
 import mindustry.world.*;
@@ -24,7 +27,12 @@ public class ExperimentalBlocks{
 		clevicure = new ItemTurret("clevicure"){{
 			requirements(Category.turret, BuildVisibility.sandboxOnly, with());
 			ammo(
-				Items.copper, Bullets.standardCopper
+				Items.copper,  new BasicBulletType(2.5f, 9){{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                    ammoMultiplier = 2;
+                }},
 			);
 			
 			drawer = new DrawTurret("reinforced-"){{
