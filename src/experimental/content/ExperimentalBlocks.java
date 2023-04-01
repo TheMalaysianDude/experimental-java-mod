@@ -32,7 +32,7 @@ public class ExperimentalBlocks{
                     height = 9f;
                     lifetime = 60f;
                     ammoMultiplier = 2;
-                }},
+                }}
 			);
 			
 			drawer = new DrawTurret("reinforced-"){{
