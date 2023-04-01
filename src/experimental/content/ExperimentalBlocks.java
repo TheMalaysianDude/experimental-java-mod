@@ -39,19 +39,26 @@ public class ExperimentalBlocks{
 				parts.addAll(
 					new RegionPart("-top"){{
 						progress = PartProgress.warmup;
-						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
-						y = 14.25f; x = 9.25f;
+						//moves.add(new PartMove(PartProgress.recoil, 0f, -0, 0f));
+						x = 9.25f; y = 14.25f; 
+						mirror = true;
+						turretShading = true;
+					}},
+					new RegionPart("-mid"){{
+						progress = PartProgress.warmup;
+						//moves.add(new PartMove(PartProgress.recoil, 0f, -0, 0f));
+						x = 9.25f; y = 0f; 
 						mirror = true;
 						turretShading = true;
 					}},
 					new RegionPart("-mid-bottom"){{
 						progress = PartProgress.warmup;
-						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
+						//moves.add(new PartMove(PartProgress.recoil, 0f, -0f, 0f));
 						y = -2.75f;
 					}},
 					new RegionPart("-mid-top"){{
 						progress = PartProgress.warmup;
-						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
+						//moves.add(new PartMove(PartProgress.recoil, 0f, -0f, 0f));
 						y = 4.25f;
 					}}
 				);
