@@ -47,11 +47,12 @@ public class ExperimentalBlocks{
 						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
 						y = -0f;
 					}},
-					new RegionPart("-mid-top"){{
+					new RegionPart("-top"){{
 						progress = PartProgress.warmup;
 						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
 						x = -5f;
 						mirror = true;
+						turretShading = true;
 					}}
 				);
 			}};
