@@ -40,6 +40,18 @@ public class ExperimentalBlocks{
 					new RegionPart("-mid-bottom"){{
 						progress = PartProgress.warmup;
 						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
+						y = -2.75f;
+					}},
+					new RegionPart("-mid-top"){{
+						progress = PartProgress.warmup;
+						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
+						y = -0f;
+					}},
+					new RegionPart("-mid-top"){{
+						progress = PartProgress.warmup;
+						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
+						x = -5f;
+						mirror = true;
 					}}
 				);
 			}};
