@@ -35,7 +35,7 @@ public class ExperimentalBlocks{
                 }}
 			);
 			
-			drawer = new DrawTurret("reinforced-"){{
+			drawer = new DrawTurret("experimental-java-mod-reinforced-"){{
 				parts.addAll(
 					new RegionPart("-mid-bottom"){{
 						progress = PartProgress.warmup;
@@ -46,6 +46,8 @@ public class ExperimentalBlocks{
 			
 			size = 6;
 			alwaysUnlocked = true;
+			
+			
 		}};
 		
 		
