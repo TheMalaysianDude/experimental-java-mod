@@ -37,6 +37,13 @@ public class ExperimentalBlocks{
 			
 			drawer = new DrawTurret(){{
 				parts.addAll(
+					new RegionPart("-top"){{
+						progress = PartProgress.warmup;
+						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
+						y = 14.25f; x = 9.25;
+						mirror = true;
+						turretShading = true;
+					}},
 					new RegionPart("-mid-bottom"){{
 						progress = PartProgress.warmup;
 						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
@@ -45,14 +52,7 @@ public class ExperimentalBlocks{
 					new RegionPart("-mid-top"){{
 						progress = PartProgress.warmup;
 						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
-						y = -0f;
-					}},
-					new RegionPart("-top"){{
-						progress = PartProgress.warmup;
-						moves.add(new PartMove(PartProgress.recoil, 0f, -3f, 0f));
-						x = -5f;
-						mirror = true;
-						turretShading = true;
+						y = 4.25f;
 					}}
 				);
 			}};
