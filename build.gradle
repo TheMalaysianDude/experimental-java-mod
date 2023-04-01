@@ -2,7 +2,6 @@ apply plugin: "java"
 
 version '1.0'
 
-//compile java 16 code, targeting java 8
 targetCompatibility = 8
 sourceCompatibility = JavaVersion.VERSION_16
 
@@ -14,9 +13,10 @@ repositories{
 }
 
 ext{
-    //the build number that this mod is made for
-    mindustryVersion = 'v139'
-    jabelVersion = "93fde537c7"
+    mindustryVersion = 'v141.2'
+    mindustryHash = '385af57d1b'
+    arcHash = '2b9b7c4a1d'
+    jabelVersion = "0.7.0"
     sdkRoot = System.getenv("ANDROID_HOME") ?: System.getenv("ANDROID_SDK_ROOT")
 }
 
@@ -28,13 +28,15 @@ allprojects{
 }
 
 dependencies{
-    //compileOnly "com.github.Anuken.Arc:arc-core:$mindustryVersion"
-    //compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
-	
+    //Release
+    compileOnly "com.github.Anuken.Arc:arc-core:$mindustryVersion"
+    compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
+
+    //BE
+    //compileOnly "com.github.Anuken.MindustryJitpack:core:$mindustryHash"
+    //compileOnly "com.github.Anuken.Arc:arc-core:$arcHash"
+
     annotationProcessor "com.github.Anuken:jabel:$jabelVersion"
-	annotationProcessor "com.github.Anuken:jabel:$jabelVersion"
-    compileOnly "com.github.Anuken.MindustryJitpack:core:69f0126eca"
-    compileOnly "com.github.Anuken.Arc:arc-core:b1b88883e2"
 }
 
 task jarAndroid{
@@ -86,3 +88,17 @@ task deploy(type: Jar){
         }
     }
 }
+
+task moveDesktop doFirst{
+    exec{
+        workingDir "$buildDir"
+        if(System.getProperty("os.name").toLowerCase(Locale.ROOT).contains("windows")){
+            println "Yeeting PM to the shadow realm..."
+            commandLine("cmd", "/C", "move", "/Y", "libs\\${project.archivesBaseName}Desktop.jar", "%userprofile%\\AppData\\Roaming\\Mindustry\\mods")
+        }else{
+            println "This task was made only for Windows. If you are a mac user, please PR the proper command to yeet PM into the mods folder."
+        }
+    }
+}
+
+task jarMove dependsOn "jar", "moveDesktop"
