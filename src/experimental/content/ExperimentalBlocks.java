@@ -32,7 +32,21 @@ public class ExperimentalBlocks{
                     height = 9f;
                     lifetime = 60f;
                     ammoMultiplier = 2;
-                }}
+                }},
+				
+				Items.surgaAlloy, new PointBulletType(){{
+					shootEffect = Fx.instShoot;
+                    hitEffect = Fx.instHit;
+                    smokeEffect = Fx.smokeCloud;
+                    trailEffect = Fx.instTrail;
+                    despawnEffect = Fx.instBomb;
+                    trailSpacing = 20f;
+                    damage = 1350;
+                    buildingDamageMultiplier = 0.2f;
+                    speed = brange;
+                    hitShake = 6f;
+                    ammoMultiplier = 1f;
+				}}
 			);
 			
 			drawer = new DrawTurret(){{
