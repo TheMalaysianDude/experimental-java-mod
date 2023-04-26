@@ -34,7 +34,7 @@ public class ExperimentalBlocks{
                     ammoMultiplier = 2;
                 }},
 				
-				Items.surgaAlloy, new PointBulletType(){{
+				Items.surgeAlloy, new PointBulletType(){{
 					shootEffect = Fx.instShoot;
                     hitEffect = Fx.instHit;
                     smokeEffect = Fx.smokeCloud;
