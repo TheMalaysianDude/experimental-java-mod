@@ -43,7 +43,7 @@ public class ExperimentalBlocks{
                     trailSpacing = 20f;
                     damage = 1350;
                     buildingDamageMultiplier = 0.2f;
-                    speed = brange;
+                    speed = 500f;
                     hitShake = 6f;
                     ammoMultiplier = 1f;
 				}}
@@ -87,8 +87,6 @@ public class ExperimentalBlocks{
 			
 			size = 6;
 			alwaysUnlocked = true;
-			
-			
 		}};
 		
 		
